@@ -1,12 +1,13 @@
 import React from  'react';
 import header from './Header.css';
 
-const Header = function(){
+const Header = function(props){
    
 return(
     
     <div className = "header">
-      Phone Directory
+      {props.heading}<br/>
+      {props.instructor}
    </div>
 
 
@@ -20,7 +21,7 @@ export default Header;
 // class Header extends Component {
 // render(){
 
-//     retune(
+//     return(
 //     <div className = "header">
 //            Phone Directory
 //         </div>

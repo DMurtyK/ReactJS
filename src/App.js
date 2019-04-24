@@ -24,10 +24,11 @@ import './App.css';
 
     return (	    
       <div>	      
-        <Header/>	        
+           
 
         	  
               <div className="component-body-container">
+                <Header heading = "Phone Directory" instructor = " by Deepa"/>	     
                   <button className="custom-btn add-btn">Add</button>
              
           <div className="grid-container heading-container">
@@ -56,9 +57,17 @@ import './App.css';
           }
 
         </div>	       
-      </div>	     
-    );	 
+      </div>
+    
+      
+ 
+
+);
+
+    	 
   }
 }
+
+
 
 export default App;
