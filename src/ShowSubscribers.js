@@ -1,40 +1,11 @@
 import React, { Component } from 'react';
 import Header from './Header.js';	
-import './App.css';
+import './ShowSubscribers.css';
 
 
- class App extends Component {	
-  constructor()
-  {
-    super();
-    this.state = {
-      subscribersListToShow: []
-    }
-  }
-
-
-  clickHandler(message){
-
-  alert(message);
-}
-
-
+ class ShowSubscribers extends Component {	
+ 
   render() {
-    
-    // let subscribers = [
-    //         {
-    //           id :1,
-    //           name : "shilpa",
-    //           phone:"888888888"
-    //         },
-    //         {
-    //           id:2,
-    //           name : "shen",
-    //           phone : "999999999"
-    //         }
-
-
-    // ]
     
     return (	  
       
@@ -52,15 +23,15 @@ import './App.css';
           {
 
 
-           this.state.subscribersListToShow.map(sub => {
+           this.props.subscribersList.map(sub => {
 
 
             return <div key = {sub.id} className = "grid-container">
             <span className= "grid-item">{sub.name}</span>
             <span className= "grid-item">{sub.phone}</span>
             <span className="grid-item action-btn-container">
-                  <button className="custom-btn delete-btn" onClick = {this.clickHandler.bind(this,"Delete Clicked")}>Delete</button>
-                </span>
+            <button className="custom-btn delete-btn" >Delete</button>
+            </span>
            </div>
 
 
@@ -83,4 +54,4 @@ import './App.css';
 
 
 
-export default App;
+export default ShowSubscribers;
