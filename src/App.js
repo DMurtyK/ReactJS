@@ -4,6 +4,13 @@ import './App.css';
 
 
  class App extends Component {	
+
+  clickHandler(message){
+
+  alert(message);
+}
+
+
   render() {
     
     let subscribers = [
@@ -28,7 +35,7 @@ import './App.css';
 
         	  
               <div className="component-body-container">
-                <Header heading = "Phone Directory" instructor = " by Deepa"/>	     
+                <Header heading = "Phone Directory" instructor = " By Deepa"/>	     
                   <button className="custom-btn add-btn">Add</button>
              
           <div className="grid-container heading-container">
@@ -46,7 +53,7 @@ import './App.css';
             <span className= "grid-item">{sub.name}</span>
             <span className= "grid-item">{sub.phone}</span>
             <span className="grid-item action-btn-container">
-                  <button className="custom-btn delete-btn">Delete</button>
+                  <button className="custom-btn delete-btn" onClick = {this.clickHandler.bind(this,"Delete Clicked")}>Delete</button>
                 </span>
            </div>
 
