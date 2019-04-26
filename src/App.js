@@ -4,6 +4,14 @@ import './App.css';
 
 
  class App extends Component {	
+  constructor()
+  {
+    super();
+    this.state = {
+      subscribersListToShow: []
+    }
+  }
+
 
   clickHandler(message){
 
@@ -13,29 +21,27 @@ import './App.css';
 
   render() {
     
-    let subscribers = [
-            {
-              id :1,
-              name : "shilpa",
-              phone:"888888888"
-            },
-            {
-              id:2,
-              name : "shen",
-              phone : "999999999"
-            }
+    // let subscribers = [
+    //         {
+    //           id :1,
+    //           name : "shilpa",
+    //           phone:"888888888"
+    //         },
+    //         {
+    //           id:2,
+    //           name : "shen",
+    //           phone : "999999999"
+    //         }
 
 
-    ]
-
-
-    return (	    
-      <div>	      
-           
-
-        	  
-              <div className="component-body-container">
-                <Header heading = "Phone Directory" instructor = " By Deepa"/>	     
+    // ]
+    
+    return (	  
+      
+      
+      <div>	     
+                    <div className="component-body-container">
+                <Header heading = "Phone Directory" instructor = " By Deepa"/><br/>	     
                   <button className="custom-btn add-btn">Add</button>
              
           <div className="grid-container heading-container">
@@ -46,7 +52,7 @@ import './App.css';
           {
 
 
-           subscribers.map(sub => {
+           this.state.subscribersListToShow.map(sub => {
 
 
             return <div key = {sub.id} className = "grid-container">
