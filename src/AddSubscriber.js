@@ -2,6 +2,7 @@ import React ,{Component} from 'react';
 import Header from "./Header";
 import './AddSubscriber.css'
 import { timingSafeEqual } from 'crypto';
+import {Link} from 'react-router-dom';
 
 class AddSubscriber extends Component {
     constructor(){
@@ -27,6 +28,7 @@ class AddSubscriber extends Component {
         e.preventDefault();
         this.props.addSubscriberHandler(this.state);
         this.setState({id:0,name:'',phone:''});
+        this.props.history.push("/");
     }
 
     render(){
@@ -35,7 +37,7 @@ class AddSubscriber extends Component {
             <div>
             <Header heading = "Add Subscriber" />
             <div className = "component-body-container">
-            <button className = "custom-btn">Back </button>
+            <Link to = "/"><button className = "custom-btn">Back </button></Link>
             <form className = "subscriber-form" onSubmit = {this.onFormSubmitted.bind(this)}>
             <label htmlFor = "name" className = "label-control" >Name:</label><br />
             <input id = "name" type = "text" className ="name-control" name = "name" onChange = {this.inputChangedHandler} /><br /><br />
